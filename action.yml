@@ -1,0 +1,19 @@
+name: 'Robocorp - Upload robot to Robocorp Cloud'
+description: 'Upload robot to Robocorp Cloud'
+inputs:
+  workspace-key:
+    description: 'Workspace API access key'
+    required: true
+  workspace-id:
+    description: 'Workspace ID to upload the robot to'
+    required: true
+  robot-id:
+    description: 'ID of robot to update'
+    required: true
+  api-endpoint:
+    description: 'Robocorp Cloud API URL'
+    default: 'https://api.eu1.robocloud.eu'
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

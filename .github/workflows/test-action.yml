@@ -1,0 +1,21 @@
+name: Test action
+
+on: [push]
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    name: Test action
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Upload Robot to Robocorp Cloud
+        uses: ./
+        with:
+          workspace-key: ${{ secrets.ROBOCORP_WORKSPACE_KEY }}
+          workspace-id: ${{ secrets.ROBOCORP_WORKSPACE_ID }}
+          robot-id: ${{ secrets.ROBOCORP_ROBOT_ID }}
+
