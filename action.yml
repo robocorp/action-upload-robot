@@ -1,6 +1,6 @@
-name: 'Robocorp - Upload robot to Robocorp Cloud'
+name: 'Upload robot to Robocorp Cloud'
 description: 'Upload robot to Robocorp Cloud'
-author: 'robocorp'
+author: 'Robocorp'
 branding:
   color: 'purple'
   icon: 'upload-cloud'
