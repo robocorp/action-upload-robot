@@ -15,18 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Upload robot
     steps:
-      - uses: actions/checkout@master
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
+      - name: Checkout files from repository
+        uses: actions/checkout@v2
       - name: Upload robot to Robocorp Cloud
-        uses: robocorp/action-upload-robot
+        uses: robocorp/action-upload-robot@v1
         with:
           workspace-key: ${{ secrets.ROBOCORP_WORKSPACE_KEY }}
           workspace-id: ${{ secrets.ROBOCORP_WORKSPACE_ID }}
           robot-id: ${{ secrets.ROBOCORP_ROBOT_ID }}
-
 ```
 
 ##### Configuration
