@@ -60,6 +60,7 @@ const uploadRobot = (robotId) => __awaiter(void 0, void 0, void 0, function* () 
     }
     const githubWorkspace = process.env.GITHUB_WORKSPACE;
     const robotBundleDir = yield fs.promises.mkdtemp(path_1.default.join(githubWorkspace, 'robot-bundle-'));
+    const robotContentDir = path_1.default.join(githubWorkspace, core_1.getInput('robot-bundle-dir'));
     const bundleOutputPath = path_1.default.join(githubWorkspace, 'robot-bundle.zip');
     const filterFileNames = [
         robotBundleDir,
@@ -70,7 +71,7 @@ const uploadRobot = (robotId) => __awaiter(void 0, void 0, void 0, function* () 
     ];
     const filter = (fileName) => filterFileNames.filter((filterFileName) => fileName.indexOf(filterFileName) !== -1).length === 0;
     yield new Promise((resolve, reject) => {
-        ncp_1.default('./', robotBundleDir, { filter }, (err) => {
+        ncp_1.default(robotContentDir, robotBundleDir, { filter }, (err) => {
             if (err) {
                 console.error(err);
                 reject(err);

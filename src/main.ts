@@ -25,6 +25,10 @@ const uploadRobot = async (robotId: string) => {
   const githubWorkspace = process.env.GITHUB_WORKSPACE as string;
 
   const robotBundleDir = await fs.promises.mkdtemp(path.join(githubWorkspace, 'robot-bundle-'));
+  const robotContentDir = path.join(
+    githubWorkspace,
+    getInput('robot-bundle-dir')
+  );
   const bundleOutputPath = path.join(githubWorkspace, 'robot-bundle.zip');
 
   const filterFileNames: string[] = [
@@ -41,7 +45,7 @@ const uploadRobot = async (robotId: string) => {
     ).length === 0;
 
   await new Promise((resolve, reject) => {
-    ncp('./', robotBundleDir, { filter }, (err) => {
+    ncp(robotContentDir, robotBundleDir, { filter }, (err) => {
       if (err) {
         console.error(err);
         reject(err);
