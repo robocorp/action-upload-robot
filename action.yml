@@ -19,8 +19,8 @@ inputs:
     description: 'Robocorp Cloud API URL'
     default: 'https://api.eu1.robocloud.eu'
     required: false
-  robot-bundle-dir:
-    description: 'Directory of robot content'
+  robot-dir:
+    description: 'Directory which to pack and upload'
     default: './'
     required: false
 runs:

@@ -27,7 +27,7 @@ const uploadRobot = async (robotId: string) => {
   const robotBundleDir = await fs.promises.mkdtemp(path.join(githubWorkspace, 'robot-bundle-'));
   const robotContentDir = path.join(
     githubWorkspace,
-    getInput('robot-bundle-dir')
+    getInput('robot-dir')
   );
   const bundleOutputPath = path.join(githubWorkspace, 'robot-bundle.zip');
 

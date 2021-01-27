@@ -33,3 +33,4 @@ jobs:
 | workspace-key  | string  |                              | Workspace API key in target workspace      |
 | robot-id       | string  |                              | ID of the robot in Robocorp Cloud          |
 | api-endpoint   | string  | https://api.eu1.robocloud.eu | Robocorp Cloud API URL                     |
+| robot-dir      | string  | ./                           | Directory which to pack and upload         |
