@@ -1,5 +1,5 @@
-name: 'Upload robot to Robocorp Cloud'
-description: 'Upload robot to Robocorp Cloud'
+name: 'Upload robot to Robocorp Control Room'
+description: 'Upload robot to Robocorp Control Room'
 author: 'Robocorp'
 branding:
   color: 'purple'
@@ -16,7 +16,7 @@ inputs:
     description: 'ID of robot to update'
     required: true
   api-endpoint:
-    description: 'Robocorp Cloud API URL'
+    description: 'Control Room API URL'
     default: 'https://api.eu1.robocloud.eu'
     required: false
   robot-dir:
