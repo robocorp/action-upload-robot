@@ -115,7 +115,11 @@ const upload = async (): Promise<void> => {
       throw new Error('Robot id not given');
     }
   } catch (err) {
-    setFailed(err.message);
+    if (err instanceof Error) {
+      setFailed(err);
+    } else {
+      setFailed("Unknown error")
+    }
   }
 };
 
