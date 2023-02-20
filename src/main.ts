@@ -116,7 +116,9 @@ const upload = async (): Promise<void> => {
     }
   } catch (err) {
     if (err instanceof Error) {
-      setFailed(err.message);
+      setFailed(err);
+    } else {
+      setFailed("Unknown error")
     }
   }
 };
