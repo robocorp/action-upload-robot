@@ -17,7 +17,7 @@ inputs:
     required: true
   api-endpoint:
     description: 'Control Room API URL'
-    default: 'https://api.eu1.robocorp.com/robot-v2/'
+    default: 'https://api.eu1.robocorp.com'
     required: false
   robot-dir:
     description: 'Directory which to pack and upload'
